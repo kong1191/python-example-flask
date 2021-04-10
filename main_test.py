@@ -37,3 +37,9 @@ def test_handler_with_env_variable(client):
 
     assert r.data.decode() == "Hello Foo!"
     assert r.status_code == 200
+
+
+def test_invalid_path(client):
+    r = client.get("/invalid")
+
+    assert r.status_code == 404
