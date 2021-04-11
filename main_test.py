@@ -42,4 +42,4 @@ def test_handler_with_env_variable(client):
 def test_invalid_path(client):
     r = client.get("/invalid")
 
-    assert r.status_code == 404
+    assert r.status_code == 400
